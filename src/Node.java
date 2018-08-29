@@ -1,7 +1,6 @@
 public class Node<T> {
 
-    public Node left;
-    public Node right;
+    public Node left, right;
     public T data;
 
     public Node(T data){
