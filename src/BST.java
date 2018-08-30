@@ -5,7 +5,7 @@ public class BST {
 
     Node root;
 
-    public Node insertRec(Node root, int key){
+    Node insertRec(Node root, int key){
 
 
         if (root == null) {
@@ -23,11 +23,11 @@ public class BST {
 
     }
 
-    public void insert(int key){
+    void insert(int key){
         root = insertRec(root, key);
     }
 
-    public void inOrderRec(Node root){
+    void inOrderRec(Node root){
 
         if(root != null) {
             inOrderRec(root.left);
@@ -36,9 +36,27 @@ public class BST {
         }
     }
 
-    public void inOrder(){
+    void inOrder(){
         inOrderRec(root);
     }
+
+    void postOrderRec(Node root){
+        if(root != null) {
+            postOrderRec(root.left);
+            postOrderRec(root.right);
+            System.out.println(root.data);
+        }
+    }
+
+    void postOrder(){
+        postOrderRec(root);
+    }
+
+    void countConections(){
+
+    }
+
+
 
 
 
@@ -50,13 +68,12 @@ public class BST {
 
 
 
-        for(int x = 0 ;x < 10; x ++){
-
-            tree.insert(new Random().nextInt());
-        }
+        tree.insert(4);
+        tree.insert(3);
+        tree.insert(7);
+        tree.insert(1);
 
         tree.inOrder();
-
 
 
 
